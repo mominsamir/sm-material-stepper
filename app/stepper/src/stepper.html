@@ -1,0 +1,46 @@
+	<div class="stepper">
+		<div ng-if="vm.type==='horizontal'" class="step-container step-horizontal">
+			<div class="step " >
+				<div  class="step-header md-whiteframe-2dp" ng-class="{'active': vm.currentTab=== tab.index}">
+					<div class="step-header-wrapper" ng-repeat="tab in vm.tabs">
+
+						<md-button aria-label="{{tab.index+1}}" class="md-fab md-mini md-primary md-raised index">
+							<span ng-if="!tab.scope.complete">{{tab.index+1}}</span>
+							<span ng-if="tab.scope.complete" class="material-icons">done</span>
+						</md-button>
+						<span class="title" >{{tab.label}}</span>
+						
+					</div>				
+				</div>				
+				<div  class="step-body" ng-repeat="tab in vm.tabs"  ng-show="vm.currentTab=== tab.index">
+					<div
+						step-scope="::tab.parent"
+						step-template="::tab.template"
+						connected-if="true">
+					</div>
+				</div>
+			</div>
+		</div>
+		<div ng-if="vm.type==='verticle'" class="step-container step-verticle">
+			<div class="step" ng-repeat="tab in vm.tabs">
+				<div  class="step-header" ng-class="{'active': vm.currentTab=== tab.index}">
+					<md-button aria-label="{{tab.index+1}}" class="md-fab md-mini md-primary md-raised index">
+						<span ng-if="!tab.scope.complete">{{tab.index+1}}</span>
+						<span ng-if="tab.scope.complete" class="material-icons">done</span>
+
+					</md-button>
+					<span class="title" >{{tab.label}}</span>				
+				</div>
+				<div 
+					class="step-body"
+					ng-class="{'active': vm.currentTab=== tab.index}"					
+					ng-show="vm.currentTab=== tab.index"		
+					step-scope="::tab.parent"
+					step-template="::tab.template"
+					connected-if="true">
+				</div>
+
+			</div>			
+		</div>	
+		<div ng-transclude></div> 
+	</div>

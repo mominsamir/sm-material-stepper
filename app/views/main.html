@@ -1,0 +1,121 @@
+
+<div layout="row" layout-padding ng-controller="MainCtrl as tm" flex="100">
+	<form name="testForm">
+		<stepper stepper-type="'horizontal'" on-finish="tm.completed()" on-cancel="tm.completed()">
+			<step valid="tm.exitValidation()">
+				<step-title>
+					Select Customer
+				</step-title>
+				<step-content layout="column">
+					<div layout="row"  >
+					<gj-input
+						form="test"
+						fname="test"
+						lable="test"
+						ng-requires="true" 
+						ng-model="tm.user.name1" 
+						ng-change="tm.completed()">
+					</gj-input>
+				   		<md-input-container>
+				        	<label>name</label>
+				        	<input ng-model="tm.user.name">
+				      </md-input-container>
+				      </div>
+					<div layout="row" >
+					<gj-input
+						form="test"
+						fname="test"
+						lable="test"
+						ng-requires="true" 
+						ng-model="tm.user.name" 
+						ng-change="tm.completed()">
+					</gj-input>
+				   		<md-input-container>
+				        	<label>name</label>
+				        	<input ng-model="tm.user.name">
+				      </md-input-container>
+				      </div>
+					<div layout="row" >
+					<gj-input
+						form="test"
+						fname="test"
+						lable="test"
+						ng-requires="true" 
+						ng-model="tm.user.name2" 
+						ng-change="tm.completed()">
+					</gj-input>
+				   		<md-input-container>
+				        	<label>name</label>
+				        	<input ng-model="tm.user.name">
+				      </md-input-container>
+				      </div>				      
+				</step-content>		
+			</step>
+			<step valid="tm.exitValidation()">
+				<step-title>
+					Select Customer
+				</step-title>
+				<step-content layout="column">
+					<gj-input
+						form="test"
+						fname="test"
+						lable="test"
+						ng-requires="true" 
+						ng-model="tm.user.name" 
+						ng-change="tm.completed()">
+					</gj-input>
+				   <md-input-container>
+				        <label>name</label>
+				        <input ng-model="tm.user.name"
+				        >
+				      </md-input-container>
+				      <md-button class="md-button md-raised md-primary" step-next>Next</md-button>
+					<md-button class="md-button md-raised md-primary" step-cancel>Cancel</md-button>			      		      					      
+				</step-content>		
+			</step>
+
+			<step valid="true">
+				<step-title>
+					Select Terminal 
+				</step-title>
+				<step-content>
+					<div layout="row">
+						
+					   <md-input-container flex="30">
+					        <label>last</label>
+					        <input ng-model="tm.user.last">
+					      </md-input-container>
+					   <md-input-container flex="30">
+					        <label>last</label>
+					        <input ng-model="tm.user.last">
+					      </md-input-container>
+					   <md-input-container flex="30">
+					        <label>last</label>
+					        <input ng-model="tm.user.last">
+					    </md-input-container>			      			      
+					    <md-button class="md-button md-raised md-primary" step-next>Next</md-button>		      
+					    <md-button class="md-button md-raised md-primary" step-preivous>back</md-button>	
+						<md-button class="md-button md-raised md-primary" step-cancel>Cancel</md-button>			      		      						      		  
+					</div>   
+				</step-content>	
+			</step>	
+			<step data-title="title 2 is Here">
+				<step-title>
+					Select product Details
+				</step-title>
+				<step-content>
+				   <md-input-container>
+				        <label>next</label>
+				        <input ng-model="tm.user.next">
+				    </md-input-container>
+				</step-content>		
+			</step>
+
+			<div layout="row">
+				<md-button class="md-button md-raised md-primary" step-next>Next</md-button>
+				<md-button class="md-button md-raised md-primary" step-cancel>Cancel</md-button>			      		      					      
+				<md-button class="md-button md-raised md-primary" step-finish>finish</md-button>		 				
+			</div>
+		</stepper>
+	</form>	
+</div>
